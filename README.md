@@ -1,35 +1,60 @@
-# Fit&Fine - Gatsby Version
+# FitLife Pro
 
-This project is structured for the **Gatsby Framework**.
+A comprehensive fitness and diet plan website featuring success stories, subscription plans, and interactive contact forms.
 
-## Quick Start (Migrating to Real Gatsby)
+## 🚀 Deployment to Vercel
 
-To run this as a full production Gatsby application on your local machine:
+This project is configured for seamless deployment on Vercel.
 
-1.  **Initialize Gatsby**:
+### Option 1: Vercel CLI (Recommended)
+
+1.  **Install Vercel CLI**:
     ```bash
-    npm init gatsby
-    # Follow prompts (Project name: fitlifepro, CMS: No, Styling: TailwindCSS)
+    npm i -g vercel
     ```
 
-2.  **Copy Files**:
-    Move the files from this preview into your new Gatsby project:
-    *   Copy contents of `components/` -> `src/components/`
-    *   Copy contents of `pages/` -> `src/pages/`
-    *   Copy contents of `data/` -> `src/data/`
-    *   Copy contents of `types.ts` -> `src/types.ts`
-    *   Copy `gatsby-config.js` -> Project Root
-    *   Copy `gatsby-browser.js` -> Project Root
-
-
-3.  **Run**:
+2.  **Deploy**:
+    Run the following command in the project root:
     ```bash
-    npm run develop
+    vercel
     ```
+    Follow the prompts to link your account and project.
 
-## Project Structure
+### Option 2: Git Integration
 
-*   `src/pages`: Gatsby File System Routing.
-*   `gatsby-browser.js`: Wraps pages in the `Layout` component.
-*   `gatsby-config.js`: Plugin configuration.
-*   `export const Head`: SEO metadata for each page.
+1.  Push this code to a Git repository (GitHub, GitLab, or Bitbucket).
+2.  Log in to [Vercel](https://vercel.com).
+3.  Click "Add New..." > "Project".
+4.  Import your repository.
+5.  Vercel will automatically detect the **Vite** framework settings:
+    *   **Build Command**: `vite build`
+    *   **Output Directory**: `dist`
+6.  Click **Deploy**.
+
+## 🛠 Project Setup
+
+This project uses **Vite** + **React**.
+
+### Install Dependencies
+```bash
+npm install
+```
+
+### Run Locally
+```bash
+npm run dev
+```
+
+### Build for Production
+```bash
+npm run build
+```
+
+## Structure
+
+*   `src/` - (Conceptually the root)
+    *   `components/` - Reusable UI components.
+    *   `pages/` - Page views.
+    *   `data/` - Mock data.
+*   `vite.config.ts` - Build configuration.
+*   `vercel.json` - Routing configuration.
