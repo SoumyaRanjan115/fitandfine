@@ -1,4 +1,4 @@
-# FitLife Pro - Gatsby Version
+# Fit&Fine - Gatsby Version
 
 This project is structured for the **Gatsby Framework**.
 
@@ -21,19 +21,8 @@ To run this as a full production Gatsby application on your local machine:
     *   Copy `gatsby-config.js` -> Project Root
     *   Copy `gatsby-browser.js` -> Project Root
 
-3.  **Update Imports**:
-    In this preview, we used `react-router-dom` to make the links work in the browser.
-    In your real Gatsby project, find and replace:
-    
-    ```typescript
-    import { Link } from 'react-router-dom';
-    // CHANGE TO:
-    import { Link } from 'gatsby';
-    ```
 
-    (Check `components/Layout.tsx`, `components/Hero.tsx`, and `pages/404.tsx`)
-
-4.  **Run**:
+3.  **Run**:
     ```bash
     npm run develop
     ```
