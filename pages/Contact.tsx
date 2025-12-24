@@ -42,11 +42,7 @@ const ContactPage: React.FC = () => {
   };
 
   return (
-<<<<<<< HEAD
-    <div className="min-h-screen bg-premium-dark py-12 md:py-24 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-=======
     <div className="min-h-screen bg-premium-dark py-12 md:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
->>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
           <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gold/5 blur-[120px] rounded-full" />
@@ -135,7 +131,7 @@ const ContactPage: React.FC = () => {
                             className={`py-3 px-2 border transition-all duration-300 flex flex-col items-center gap-1 rounded-md ${
                               selectedPlan === plan 
                                 ? 'border-gold bg-gold/10 text-gold shadow-[0_0_15px_rgba(212,175,55,0.1)]' 
-                                : 'border-white/10 text-gray-500 hover:border-gold/50 hover:text-gray-300'
+                                : 'border-white/10 text-gray-500 hover:border-gold hover:text-gold hover:bg-gold/5'
                             }`}
                           >
                             <span className="font-bold tracking-wider uppercase text-[10px] sm:text-xs">{plan}</span>

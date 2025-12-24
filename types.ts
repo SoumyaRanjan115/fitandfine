@@ -7,7 +7,10 @@ export interface SuccessStory {
   quote: string;
   description: string;
   imageUrl: string;
+<<<<<<< HEAD
   plan?: 'Silver' | 'Gold' | 'Platinum';
+=======
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
 }
 
 export interface Plan {

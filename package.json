@@ -16,11 +16,18 @@
     "react-router-dom": "^6.22.0"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "@types/node": "^25.0.2",
+=======
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
     "@vitejs/plugin-react": "^4.2.0",
     "typescript": "^5.2.0",
     "vite": "^5.1.0"
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec

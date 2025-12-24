@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
@@ -10,6 +11,12 @@ import {
   Dumbbell,
 } from "lucide-react";
 import AuthModal from "./AuthModal";
+=======
+import React, { useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { User, Menu, X, Instagram, Facebook, Twitter, Dumbbell } from 'lucide-react';
+import AuthModal from './AuthModal';
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -21,6 +28,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const location = useLocation();
   const navigate = useNavigate();
 
+<<<<<<< HEAD
   // Scroll to top on route change
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -34,11 +42,22 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     { name: "Diet Plans", path: "/diet-plans", isScroll: false, id: null },
     { name: "FAQs", path: "/faq", isScroll: false, id: null },
     { name: "Contact", path: "/contact", isScroll: false, id: null },
+=======
+  const navItems = [
+    { name: 'Home', path: '/', isScroll: true, id: 'home' },
+    { name: 'Success Stories', path: '/', isScroll: true, id: 'success-stories' },
+    { name: 'Subscriptions', path: '/', isScroll: true, id: 'plans' },
+    { name: 'FAQs', path: '/', isScroll: true, id: 'faqs' },
+    { name: 'About Us', path: '/', isScroll: true, id: 'about' },
+    { name: 'Diet Plans', path: '/diet-plans', isScroll: false, id: null },
+    { name: 'Contact', path: '/contact', isScroll: false, id: null },
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
   ];
 
   const handleNavClick = (item: any) => {
     setIsMenuOpen(false);
     if (item.isScroll && item.id) {
+<<<<<<< HEAD
       if (location.pathname !== "/") {
         navigate("/");
         setTimeout(() => {
@@ -50,6 +69,15 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         document
           .getElementById(item.id)
           ?.scrollIntoView({ behavior: "smooth" });
+=======
+      if (location.pathname !== '/') {
+        navigate('/');
+        setTimeout(() => {
+          document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      } else {
+        document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth' });
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
       }
     } else {
       navigate(item.path);
@@ -63,11 +91,15 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
+<<<<<<< HEAD
             <Link
               to="/"
               className="flex items-center gap-2 group"
               onClick={() => window.scrollTo(0, 0)}
             >
+=======
+            <Link to="/" className="flex items-center gap-2 group" onClick={() => window.scrollTo(0, 0)}>
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
               <div className="text-gold p-1.5 transform group-hover:rotate-12 transition-transform">
                 <Dumbbell size={28} strokeWidth={1.5} />
               </div>
@@ -98,7 +130,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 <User size={18} />
                 <span className="hidden sm:inline">Member Login</span>
               </button>
+<<<<<<< HEAD
 
+=======
+              
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
               <button
                 className="md:hidden text-gold focus:outline-none"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -128,14 +164,24 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </header>
 
       {/* Main Content */}
+<<<<<<< HEAD
       <main className="flex-grow">{children}</main>
 
       {/* Footer */}
       <footer className="bg-black text-white py-16 border-t-2 border-white/10 mt-16">
+=======
+      <main className="flex-grow">
+        {children}
+      </main>
+
+      {/* Footer */}
+      <footer className="bg-black text-white py-16 border-t border-white/5">
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
             <div className="space-y-6">
               <div className="flex items-center gap-2">
+<<<<<<< HEAD
                 <div className="text-gold">
                   <Dumbbell size={24} />
                 </div>
@@ -186,10 +232,30 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                     Apply for Membership
                   </Link>
                 </li>
+=======
+                 <div className="text-gold">
+                    <Dumbbell size={24} />
+                  </div>
+                <span className="text-xl font-heading font-bold">Fit<span className="text-gold">&Fine</span></span>
+              </div>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Elite training for those who demand excellence. Experience the pinnacle of fitness and nutrition coaching.
+              </p>
+            </div>
+            
+            <div>
+              <h4 className="font-heading font-bold text-lg mb-6 text-white">Quick Links</h4>
+              <ul className="space-y-3 text-sm text-gray-400">
+                <li><button onClick={() => handleNavClick(navItems[1])} className="hover:text-gold transition-colors">Success Stories</button></li>
+                <li><button onClick={() => handleNavClick(navItems[2])} className="hover:text-gold transition-colors">Premium Plans</button></li>
+                <li><Link to="/diet-plans" className="hover:text-gold transition-colors">Diet Plans (New)</Link></li>
+                <li><Link to="/contact" className="hover:text-gold transition-colors">Apply for Membership</Link></li>
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
               </ul>
             </div>
 
             <div>
+<<<<<<< HEAD
               <h4 className="font-heading font-bold text-lg mb-6 text-white">
                 Legal
               </h4>
@@ -209,10 +275,18 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                     Cookie Policy
                   </a>
                 </li>
+=======
+              <h4 className="font-heading font-bold text-lg mb-6 text-white">Legal</h4>
+              <ul className="space-y-3 text-sm text-gray-400">
+                <li><a href="#" className="hover:text-gold transition-colors">Privacy Policy</a></li>
+                <li><a href="#" className="hover:text-gold transition-colors">Terms of Service</a></li>
+                <li><a href="#" className="hover:text-gold transition-colors">Cookie Policy</a></li>
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
               </ul>
             </div>
 
             <div>
+<<<<<<< HEAD
               <h4 className="font-heading font-bold text-lg mb-6 text-white">
                 Connect
               </h4>
@@ -233,6 +307,17 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                   href="#"
                   className="text-gray-400 hover:text-black hover:bg-gold p-3 rounded-full transition-all"
                 >
+=======
+              <h4 className="font-heading font-bold text-lg mb-6 text-white">Connect</h4>
+              <div className="flex space-x-4">
+                <a href="#" className="text-gray-400 hover:text-black hover:bg-gold p-3 rounded-full transition-all">
+                  <Instagram size={20} />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-black hover:bg-gold p-3 rounded-full transition-all">
+                  <Facebook size={20} />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-black hover:bg-gold p-3 rounded-full transition-all">
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
                   <Twitter size={20} />
                 </a>
               </div>
@@ -250,4 +335,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   );
 };
 
+<<<<<<< HEAD
 export default Layout;
+=======
+export default Layout;
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec

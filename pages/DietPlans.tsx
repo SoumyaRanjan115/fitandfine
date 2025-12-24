@@ -2,13 +2,23 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { 
+<<<<<<< HEAD
+=======
+  Calculator, 
+  Activity, 
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
   CheckCircle, 
   ChevronDown, 
   ChevronUp, 
   User, 
   ClipboardList, 
   TrendingUp, 
+<<<<<<< HEAD
   AlertCircle
+=======
+  AlertCircle,
+  Dumbbell
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
 } from 'lucide-react';
 import Button from '../components/Button';
 
@@ -17,10 +27,15 @@ import Button from '../components/Button';
 interface DietPlan {
   id: string;
   name: string;
+<<<<<<< HEAD
   category: 'Weight Loss' | 'Weight Gain' | 'Muscle Gain' | 'Maintenance' | 'Vegetarian';
   tier: 'Silver' | 'Gold' | 'Platinum';
   goal: string;
   description: string;
+=======
+  tier: 'Silver' | 'Gold' | 'Platinum';
+  goal: string;
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
   duration: string;
   features: string[];
   recommendedFor: string[];
@@ -33,6 +48,7 @@ interface DietPlan {
 }
 
 const DIET_PLANS: DietPlan[] = [
+<<<<<<< HEAD
   // Weight Loss Plans
   {
     id: 'weight-loss-silver',
@@ -165,6 +181,15 @@ const DIET_PLANS: DietPlan[] = [
     description: 'Balanced nutrition plan to maintain current weight and support overall wellness.',
     duration: '45 Days',
     features: ['Balanced Macro Split', 'Hydration Tracking', 'Weekly Cheat Meal Guide', 'Basic Meal Templates'],
+=======
+  {
+    id: 'silver',
+    name: 'Silver',
+    tier: 'Silver',
+    goal: 'Maintenance & Wellness',
+    duration: '45 Days',
+    features: ['Balanced Macro Split', 'Hydration Tracking', 'Weekly Cheat Meal Guide'],
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
     recommendedFor: ['Normal'],
     sampleMenu: { 
       breakfast: 'Oatmeal with Blueberries & Honey', 
@@ -174,6 +199,7 @@ const DIET_PLANS: DietPlan[] = [
     }
   },
   {
+<<<<<<< HEAD
     id: 'maintenance-gold',
     name: 'Maintenance / Balanced Diet Plan',
     category: 'Maintenance',
@@ -223,6 +249,35 @@ const DIET_PLANS: DietPlan[] = [
       lunch: 'Lentil & Vegetable Buddha Bowl', 
       snack: 'Hummus with Vegetable Sticks', 
       dinner: 'Quinoa Stuffed Bell Peppers with Side Salad' 
+=======
+    id: 'gold',
+    name: 'Gold',
+    tier: 'Gold',
+    goal: 'Muscle Gain & Strength',
+    duration: '60 Days',
+    features: ['High Protein Focus (2g/kg)', 'Pre/Post-workout Nutrition', 'Creatine Loading Phase'],
+    recommendedFor: ['Underweight'],
+    sampleMenu: { 
+      breakfast: '6 Egg Whites + 2 Whole Eggs, Wholegrain Toast', 
+      lunch: 'Lean Beef Stir-fry with Brown Rice', 
+      snack: 'Whey Protein Shake + Banana', 
+      dinner: 'Grilled Chicken Breast, Sweet Potato, Broccoli' 
+    }
+  },
+  {
+    id: 'platinum',
+    name: 'Platinum',
+    tier: 'Platinum',
+    goal: 'Weight Loss & Definition',
+    duration: '90 Days',
+    features: ['Carb Cycling Protocol', 'Intermittent Fasting Options', 'Metabolic Detox Weekends'],
+    recommendedFor: ['Overweight', 'Obese'],
+    sampleMenu: { 
+      breakfast: 'Green Smoothie (Spinach, Apple, Ginger, Protein)', 
+      lunch: 'Tofu & Quinoa Buddha Bowl', 
+      snack: 'Celery Sticks with Hummus', 
+      dinner: 'Baked Salmon with Lemon & Zucchini Noodles' 
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
     }
   }
 ];
@@ -235,21 +290,73 @@ interface AssignFormInputs {
 }
 
 const DietPlans: React.FC = () => {
+<<<<<<< HEAD
   // UI State
   const [expandedPlan, setExpandedPlan] = useState<string | null>(null);
   const [assignSuccess, setAssignSuccess] = useState(false);
   const [recommendedPlanId, setRecommendedPlanId] = useState<string | null>(null);
+=======
+  // BMI State
+  const [height, setHeight] = useState<string>('');
+  const [weight, setWeight] = useState<string>('');
+  const [bmi, setBmi] = useState<number | null>(null);
+  const [bmiCategory, setBmiCategory] = useState<string>('');
+  const [recommendedPlan, setRecommendedPlan] = useState<DietPlan | null>(null);
+
+  // UI State
+  const [expandedPlan, setExpandedPlan] = useState<string | null>(null);
+  const [assignSuccess, setAssignSuccess] = useState(false);
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
 
   // Form
   const { register, handleSubmit, setValue, reset, formState: { errors, isSubmitting } } = useForm<AssignFormInputs>();
 
   useEffect(() => {
     window.scrollTo(0, 0);
+<<<<<<< HEAD
     // Demo: Set a recommended plan based on BMI category (prototype logic)
     // In real system, this would come from BMI calculation
     setRecommendedPlanId('weight-loss-gold'); // Demo default
   }, []);
 
+=======
+  }, []);
+
+  const calculateBMI = () => {
+    const h = parseFloat(height);
+    const w = parseFloat(weight);
+
+    if (h > 0 && w > 0) {
+      const heightInMeters = h / 100;
+      const bmiValue = w / (heightInMeters * heightInMeters);
+      const roundedBmi = parseFloat(bmiValue.toFixed(1));
+      setBmi(roundedBmi);
+
+      let category = '';
+      let targetTier = '';
+
+      if (roundedBmi < 18.5) {
+        category = 'Underweight';
+        targetTier = 'Gold'; // Suggest bulking
+      } else if (roundedBmi >= 18.5 && roundedBmi < 24.9) {
+        category = 'Normal Weight';
+        targetTier = 'Silver'; // Suggest maintenance
+      } else if (roundedBmi >= 25 && roundedBmi < 29.9) {
+        category = 'Overweight';
+        targetTier = 'Platinum'; // Suggest shred
+      } else {
+        category = 'Obese';
+        targetTier = 'Platinum'; // Suggest shred
+      }
+
+      setBmiCategory(category);
+      const plan = DIET_PLANS.find(p => p.tier === targetTier) || DIET_PLANS[0];
+      setRecommendedPlan(plan);
+      setValue('planId', plan.id);
+    }
+  };
+
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
   const onAssignSubmit = async (data: AssignFormInputs) => {
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1500));
@@ -259,9 +366,24 @@ const DietPlans: React.FC = () => {
     setTimeout(() => setAssignSuccess(false), 5000);
   };
 
+<<<<<<< HEAD
 
   return (
     <div className="min-h-screen bg-black text-white relative pb-16">
+=======
+  const getBmiColor = (cat: string) => {
+    switch (cat) {
+      case 'Underweight': return 'text-blue-400';
+      case 'Normal Weight': return 'text-green-400';
+      case 'Overweight': return 'text-orange-400';
+      case 'Obese': return 'text-red-500';
+      default: return 'text-white';
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-black text-white relative">
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
        {/* Background Decoration */}
        <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-gold/5 blur-[120px] rounded-full pointer-events-none" />
        <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-purple-900/10 blur-[120px] rounded-full pointer-events-none" />
@@ -277,7 +399,11 @@ const DietPlans: React.FC = () => {
             Diet Plans & <span className="text-gold">Recommendations</span>
           </h1>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+<<<<<<< HEAD
             Expert diet protocols personalized for your goals. Assign, track, and manage customer diet journeys with precision.
+=======
+            Advanced BMI-based analysis to personalize nutrition. Assign, track, and manage customer diet journeys with precision.
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
           </p>
           <div className="mt-6 inline-block px-4 py-1 bg-white/5 border border-gold/30 rounded-full text-gold text-xs font-bold uppercase tracking-widest">
             Prototype / Demo Mode
@@ -285,7 +411,101 @@ const DietPlans: React.FC = () => {
         </motion.div>
       </section>
 
+<<<<<<< HEAD
       {/* 2. Available Diet Plans Grid */}
+=======
+      {/* 2. BMI Calculator Section */}
+      <section className="py-12 px-4 container mx-auto relative z-10">
+        <div className="max-w-4xl mx-auto bg-premium-dark border border-gold/30 p-8 rounded-xl shadow-[0_0_30px_rgba(212,175,55,0.05)]">
+          <div className="flex items-center gap-3 mb-6 border-b border-white/5 pb-4">
+            <Calculator className="text-gold" size={24} />
+            <h2 className="text-2xl font-heading font-bold">BMI Intelligence Engine</h2>
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-8 items-start">
+            {/* Input Side */}
+            <div className="w-full md:w-1/2 space-y-5">
+              <div>
+                <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Height (cm)</label>
+                <input 
+                  type="number" 
+                  value={height}
+                  onChange={(e) => setHeight(e.target.value)}
+                  placeholder="e.g. 175"
+                  className="w-full bg-black border border-white/10 p-3 rounded text-white focus:border-gold outline-none transition-colors"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Weight (kg)</label>
+                <input 
+                  type="number" 
+                  value={weight}
+                  onChange={(e) => setWeight(e.target.value)}
+                  placeholder="e.g. 70"
+                  className="w-full bg-black border border-white/10 p-3 rounded text-white focus:border-gold outline-none transition-colors"
+                />
+              </div>
+              <Button onClick={calculateBMI} fullWidth>Calculate BMI</Button>
+            </div>
+
+            {/* Result Side */}
+            <div className="w-full md:w-1/2 bg-black/50 p-6 rounded-lg border border-white/5 min-h-[220px] flex flex-col justify-center items-center text-center relative overflow-hidden">
+               {bmi ? (
+                 <motion.div 
+                   initial={{ opacity: 0, scale: 0.9 }}
+                   animate={{ opacity: 1, scale: 1 }}
+                   className="relative z-10"
+                 >
+                   <p className="text-gray-400 text-sm uppercase tracking-widest mb-1">Your BMI Score</p>
+                   <div className="text-6xl font-heading font-bold text-white mb-2">{bmi}</div>
+                   <div className={`text-xl font-bold ${getBmiColor(bmiCategory)} px-4 py-1 rounded-full bg-white/5 inline-block border border-white/10`}>
+                     {bmiCategory}
+                   </div>
+                 </motion.div>
+               ) : (
+                 <div className="text-gray-500 flex flex-col items-center">
+                   <Activity size={40} className="mb-3 opacity-30" />
+                   <p className="text-sm">Enter metrics to calculate</p>
+                 </div>
+               )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Recommended Plan Section */}
+      <AnimatePresence>
+        {recommendedPlan && (
+          <section className="py-8 px-4 container mx-auto">
+             <motion.div 
+               initial={{ opacity: 0, y: 20 }}
+               animate={{ opacity: 1, y: 0 }}
+               className="max-w-4xl mx-auto bg-gradient-to-r from-premium-dark to-black border border-gold p-8 rounded-xl shadow-[0_0_20px_rgba(212,175,55,0.15)] flex flex-col md:flex-row items-center justify-between gap-6"
+             >
+                <div className="text-center md:text-left">
+                  <div className="flex items-center justify-center md:justify-start gap-2 text-gold mb-2">
+                    <Dumbbell size={20} />
+                    <span className="font-bold uppercase tracking-widest text-xs">Recommended for you</span>
+                  </div>
+                  <h3 className="text-3xl font-heading font-bold text-white mb-2">{recommendedPlan.name}</h3>
+                  <p className="text-gray-400">
+                    Based on a BMI of <span className="text-white font-bold">{bmi}</span> ({bmiCategory}), this plan is optimized for your goals.
+                  </p>
+                </div>
+                <Button 
+                   onClick={() => document.getElementById(`plan-${recommendedPlan.id}`)?.scrollIntoView({ behavior: 'smooth' })}
+                   variant="outline"
+                   className="shrink-0"
+                >
+                  View Details
+                </Button>
+             </motion.div>
+          </section>
+        )}
+      </AnimatePresence>
+
+      {/* 4. Available Diet Plans Grid */}
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
       <section className="py-16 px-4 container mx-auto">
          <div className="text-center mb-12">
             <h2 className="text-3xl font-heading font-bold">Expert Diet Protocols</h2>
@@ -294,23 +514,36 @@ const DietPlans: React.FC = () => {
 
          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {DIET_PLANS.map((plan) => {
+<<<<<<< HEAD
               const isRecommended = recommendedPlanId === plan.id;
+=======
+              const isRecommended = recommendedPlan?.id === plan.id;
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
               return (
                 <motion.div 
                   key={plan.id}
                   id={`plan-${plan.id}`}
                   whileHover={{ y: -5 }}
+<<<<<<< HEAD
                   className={`bg-premium-dark border ${isRecommended ? 'border-gold shadow-[0_0_20px_rgba(212,175,55,0.1)]' : 'border-white/10'} rounded-xl overflow-hidden flex flex-col hover:border-gold transition-colors`}
+=======
+                  className={`bg-premium-dark border ${isRecommended ? 'border-gold shadow-[0_0_20px_rgba(212,175,55,0.1)]' : 'border-white/10'} rounded-xl overflow-hidden flex flex-col`}
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
                 >
                   <div className="p-6 border-b border-white/5 bg-black/20">
                     <div className="flex justify-between items-start mb-4">
                        <h3 className="text-xl font-heading font-bold text-white">{plan.name}</h3>
                        {isRecommended && <CheckCircle size={20} className="text-gold" />}
                     </div>
+<<<<<<< HEAD
                     <div className="text-xs text-gold uppercase tracking-widest mb-2 font-semibold">Sample / Demo Plan</div>
                     <div className="text-sm text-gray-400 mb-1"><strong className="text-gold">Goal:</strong> {plan.goal}</div>
                     <div className="text-sm text-gray-400 mb-2"><strong className="text-gold">Duration:</strong> {plan.duration}</div>
                     <div className="text-xs text-gray-500 italic">{plan.description}</div>
+=======
+                    <div className="text-sm text-gray-400 mb-1"><strong className="text-gold">Goal:</strong> {plan.goal}</div>
+                    <div className="text-sm text-gray-400"><strong className="text-gold">Duration:</strong> {plan.duration}</div>
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
                   </div>
                   
                   <div className="p-6 flex-1">
@@ -367,7 +600,11 @@ const DietPlans: React.FC = () => {
          </div>
       </section>
 
+<<<<<<< HEAD
       {/* 3. Assign Plan - DPM Demo */}
+=======
+      {/* 5. Assign Plan - DPM Demo */}
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
       <section id="assign-section" className="py-16 px-4 bg-premium-dark/50 border-t border-white/5">
         <div className="container mx-auto max-w-4xl">
           <div className="flex items-center gap-3 mb-8">
@@ -421,6 +658,7 @@ const DietPlans: React.FC = () => {
                 <div>
                    <label className="block text-xs font-bold text-gold uppercase tracking-widest mb-2">Select Plan Protocol</label>
                    <select 
+<<<<<<< HEAD
                       {...register('planId', { required: true })}
                       className="w-full bg-premium-dark border border-white/10 px-4 py-3 rounded text-white focus:border-gold outline-none text-sm appearance-none cursor-pointer"
                    >
@@ -452,6 +690,13 @@ const DietPlans: React.FC = () => {
                      </optgroup>
                    </select>
                    {errors.planId && <span className="text-red-500 text-xs">Required</span>}
+=======
+                      {...register('planId')}
+                      className="w-full bg-premium-dark border border-white/10 px-4 py-3 rounded text-white focus:border-gold outline-none text-sm appearance-none cursor-pointer"
+                   >
+                     {DIET_PLANS.map(p => <option key={p.id} value={p.id}>{p.name} ({p.tier})</option>)}
+                   </select>
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
                 </div>
 
                 <div>
@@ -473,7 +718,11 @@ const DietPlans: React.FC = () => {
         </div>
       </section>
 
+<<<<<<< HEAD
       {/* 4. Mock Progress Tracking */}
+=======
+      {/* 6. Mock Progress Tracking */}
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
       <section className="py-16 px-4 container mx-auto">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center gap-3 mb-6">
@@ -486,9 +735,12 @@ const DietPlans: React.FC = () => {
              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -rotate-12 text-6xl font-black text-white/5 whitespace-nowrap pointer-events-none">
                 SAMPLE DATA
              </div>
+<<<<<<< HEAD
              <div className="absolute top-2 right-2 z-20">
                <span className="text-xs text-gray-500 uppercase tracking-widest bg-black/50 px-2 py-1 rounded border border-white/10">Sample Data</span>
              </div>
+=======
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
 
              <div className="flex justify-between items-end mb-2 relative z-10">
                 <div>
@@ -507,17 +759,29 @@ const DietPlans: React.FC = () => {
              </div>
              <div className="mt-4 flex gap-4 text-xs text-gray-500 relative z-10">
                 <span className="flex items-center gap-1"><CheckCircle size={12} className="text-green-500"/> Adherence: 95%</span>
+<<<<<<< HEAD
                 <span className="flex items-center gap-1"><TrendingUp size={12} className="text-blue-500"/> Workouts: 12/18</span>
+=======
+                <span className="flex items-center gap-1"><Activity size={12} className="text-blue-500"/> Workouts: 12/18</span>
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
              </div>
           </div>
         </div>
       </section>
 
+<<<<<<< HEAD
       {/* 5. Disclaimer */}
       <footer className="py-12 text-center px-4 border-t border-white/5">
          <div className="inline-flex items-center gap-2 text-gray-500 text-sm bg-black px-4 py-2 rounded-full border border-white/10 max-w-4xl">
             <AlertCircle size={16} />
             <span><strong>Prototype Disclaimer:</strong> This is a prototype demonstration. Diet plans shown are templates and not medical prescriptions. No medical advice provided.</span>
+=======
+      {/* 7. Disclaimer */}
+      <footer className="py-12 text-center px-4 border-t border-white/5">
+         <div className="inline-flex items-center gap-2 text-gray-500 text-sm bg-black px-4 py-2 rounded-full border border-white/10">
+            <AlertCircle size={16} />
+            <span><strong>Prototype Disclaimer:</strong> No medical advice provided. System allows managers to assign protocols based on calculated BMI metrics.</span>
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
          </div>
       </footer>
     </div>

@@ -18,8 +18,12 @@ export const SUCCESS_STORIES: SuccessStory[] = [
     durationWeeks: 12,
     quote: "Discipline became my new addiction.",
     imageUrl: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
+<<<<<<< HEAD
     description: "Rohan spent years trying fad diets with no results. The Gold plan's structured nutrition and strength training approach helped him shed fat while building a powerful physique. He is now training for his first marathon.",
     plan: 'Gold'
+=======
+    description: "Rohan spent years trying fad diets with no results. The Gold plan's structured nutrition and strength training approach helped him shed fat while building a powerful physique. He is now training for his first marathon."
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
   },
   {
     id: '2',
@@ -29,8 +33,12 @@ export const SUCCESS_STORIES: SuccessStory[] = [
     durationWeeks: 16,
     quote: "Consistency is the only magic pill.",
     imageUrl: "https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?auto=format&fit=crop&w=800&q=80",
+<<<<<<< HEAD
     description: "Arjun's sedentary lifestyle was taking a toll on his health markers. He joined the Platinum plan for the 1-on-1 coaching. Our trainers helped him integrate short, effective workouts into his busy schedule, helping him drop fat and improve his stamina significantly.",
     plan: 'Platinum'
+=======
+    description: "Arjun's sedentary lifestyle was taking a toll on his health markers. He joined the Platinum plan for the 1-on-1 coaching. Our trainers helped him integrate short, effective workouts into his busy schedule, helping him drop fat and improve his stamina significantly."
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
   },
   {
     id: '3',
@@ -40,8 +48,12 @@ export const SUCCESS_STORIES: SuccessStory[] = [
     durationWeeks: 10,
     quote: "I feel lighter, faster, and unstoppable.",
     imageUrl: "https://images.unsplash.com/photo-1552196563-55cd4e45efb3?auto=format&fit=crop&w=800&q=80",
+<<<<<<< HEAD
     description: "Kavita wanted to tone up for her sister's wedding. The Silver plan gave her the structure she needed. By following the clean eating templates and home workout guides, she sculpted her physique and now inspires her whole family to stay fit.",
     plan: 'Silver'
+=======
+    description: "Kavita wanted to tone up for her sister's wedding. The Silver plan gave her the structure she needed. By following the clean eating templates and home workout guides, she sculpted her physique and now inspires her whole family to stay fit."
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
   },
   {
     id: '4',
@@ -51,8 +63,12 @@ export const SUCCESS_STORIES: SuccessStory[] = [
     durationWeeks: 18,
     quote: "Strong is the new beautiful.",
     imageUrl: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=800&q=80",
+<<<<<<< HEAD
     description: "Post-pregnancy, Meera struggled to find time for herself. With the Platinum plan's flexible scheduling and home-based high-intensity intervals, she reclaimed her health and energy levels for her family.",
     plan: 'Platinum'
+=======
+    description: "Post-pregnancy, Meera struggled to find time for herself. With the Platinum plan's flexible scheduling and home-based high-intensity intervals, she reclaimed her health and energy levels for her family."
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
   },
   {
     id: '5',
@@ -62,8 +78,12 @@ export const SUCCESS_STORIES: SuccessStory[] = [
     durationWeeks: 14,
     quote: "I built the body I always dreamed of.",
     imageUrl: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=800&q=80",
+<<<<<<< HEAD
     description: "Kabir was 'skinny fat' and lacked confidence. Our hypertrophy-focused Gold plan helped him recomposition his body. He gained significant lean muscle mass while dropping body fat percentage.",
     plan: 'Gold'
+=======
+    description: "Kabir was 'skinny fat' and lacked confidence. Our hypertrophy-focused Gold plan helped him recomposition his body. He gained significant lean muscle mass while dropping body fat percentage."
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
   },
   {
     id: '6',
@@ -73,8 +93,12 @@ export const SUCCESS_STORIES: SuccessStory[] = [
     durationWeeks: 12,
     quote: "Fitness has no age limit.",
     imageUrl: "https://images.unsplash.com/photo-1550345332-09e3ac987658?auto=format&fit=crop&w=800&q=80",
+<<<<<<< HEAD
     description: "At 55, Suresh thought his best years were behind him. Our coaches designed a low-impact program that protected his joints while melting fat. He now has more energy than his sons and enjoys weekend hikes without shortness of breath.",
     plan: 'Silver'
+=======
+    description: "At 55, Suresh thought his best years were behind him. Our coaches designed a low-impact program that protected his joints while melting fat. He now has more energy than his sons and enjoys weekend hikes without shortness of breath."
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
   }
 ];
 
@@ -143,6 +167,7 @@ export const FAQS: FAQ[] = [
     question: "Will I get a personalized macro breakdown?",
     answer: "Yes, personalized macro breakdowns are included in both the Gold and Platinum plans."
   }
+<<<<<<< HEAD
 ];
 
 export const PLAN_FAQS: FAQ[] = [
@@ -176,4 +201,6 @@ export const PLAN_FAQS: FAQ[] = [
     question: "Are meal plans included in all tiers?",
     answer: "Yes, all plans include meal plans. Silver has basic templates, Gold offers personalized macro-based plans, and Platinum provides fully custom meal plans tailored to your preferences."
   }
+=======
+>>>>>>> 8bff2cf9889b423589be9e2273d5ab564ac73cec
 ];
